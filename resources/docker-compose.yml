@@ -1,0 +1,12 @@
+version: "3"
+services:
+  client:
+    build: .
+    labels:
+      au.com.brainstation.project: "__PROJECT_NAME__"
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - __ANGULAR_PORT__:4200
+      - __KARMA_PORT__:9876
+    command: bash -c "yarn --pure-lockfile && yarn serve"
