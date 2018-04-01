@@ -42,4 +42,5 @@ You can run tests.
 ```bash
 $ docker-compose exec client yarn test
 ```
-You can see Angular CLI compiles the test modules and spec files. You connect your browser at **http://localhost:9876/**. 
+You can see Angular CLI compiles the test modules and spec files. You can connect your browser 
+at **http://localhost:9876/**. 
