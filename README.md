@@ -13,6 +13,11 @@ ANGULAR_PORT=4200
 KARMA_PORT=9876
 ```
 
+Add the host name in **/etc/hosts** that is set for **LOCAL_HOST** variable in **.env** file.
+```text
+127.0.0.1	localhost brainstation.dev
+```
+
 Clone the repository and get started.
 ```bash
 $ git clone https://github.com/brainstation-au/angular-docker-starter
