@@ -22,16 +22,15 @@ Clone the repository and get started.
 ```bash
 $ git clone https://github.com/brainstation-au/angular-docker-starter
 $ cd angular-docker-starter
-$ brainstation.sh
+$ ./brainstation.sh
 ```
 
-At this point we should have got a new folder named **brainstation**. This is the folder that has your new Angular
-project. You can how move this directory to somewhere else (out of the parent directory *angular-docker-starter*).
-The purpose of this *angular-docker-started* project is now finished and you can delete this folder.
+At this point we should have got a new folder named **brainstation** in the parent directory. 
+This is the folder that has your new Angular project.
 
 ## How is the new project?
 ```bash
-$ cd brainstation
+$ cd ../brainstation
 $ docker-compose up -d
 $ docker-compose logs -f
 ```

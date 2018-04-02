@@ -1,0 +1,7 @@
+@import './palette';
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-dark-theme: mat-dark-theme($palette-primary, $palette-accent, $palette-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-light-theme: mat-light-theme($palette-primary, $palette-accent, $palette-warn);

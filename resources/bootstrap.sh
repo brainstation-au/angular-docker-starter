@@ -1,11 +1,6 @@
 #!/bin/bash
 
-cd $PROJECT_NAME
+yarn add bootstrap "jquery@1.9.1 - 3" "popper.js@^1.12.9"
 
-yarn add bootstrap
-cp -r ../resources/styles ./src/
-echo "" >> ./src/styles.scss
+cp -r $STARTER_DIRECTORY/resources/styles/bootstrap ./src/styles/
 echo "@import './styles/bootstrap/bootstrap';" >> ./src/styles.scss
-echo "@import './styles/app/app';" >> ./src/styles.scss
-
-cd ..
