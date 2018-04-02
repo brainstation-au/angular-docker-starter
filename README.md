@@ -1,5 +1,6 @@
 # angular-docker-starter
-An Angular project starter with dockerized development environment
+This is **not** an Angular project. It's a package of few scripts that creates a fresh new latest Angular project 
+with @angular/cli and configure the project to start development in a Docker container.
 
 The objective of this project is to automate the setup process of new Angular project.
 
