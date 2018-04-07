@@ -42,8 +42,12 @@ yarn install
 # Styles
 mkdir ./src/styles
 echo "" >> ./src/styles.scss
-. $STARTER_DIRECTORY/resources/bootstrap.sh
-. $STARTER_DIRECTORY/resources/material.sh
+if [[ $BOOTSTRAP == TRUE ]]; then
+  . $STARTER_DIRECTORY/resources/bootstrap.sh
+fi
+if [[ $MATERIAL == TRUE ]]; then
+  . $STARTER_DIRECTORY/resources/material.sh
+fi
 cp -r $STARTER_DIRECTORY/resources/styles/app ./src/styles/
 echo "@import './styles/app/app';" >> ./src/styles.scss
 
