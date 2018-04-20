@@ -25,4 +25,6 @@ NEW_SCRIPTS=$(jq ". + { \"serve\": \"ng serve --host 0.0.0.0 --public-host ${LOC
 
 NEW_PACKAGE=$(jq ".scripts = ${NEW_SCRIPTS}" <<<$PACKAGE)
 
-jq '.' <<<$NEW_PACKAGE > $FILE
+NEW_PACKAGE2=$(jq ". + {\"engines\":{\"node\":\"8.x\",\"npm\":\"5.x\",\"yarn\":\"1.x\"}}" <<<$NEW_PACKAGE)
+
+jq '.' <<<$NEW_PACKAGE2 > $FILE
