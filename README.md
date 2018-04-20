@@ -9,15 +9,19 @@ The objective of this project is to automate the setup process of new Angular pr
 Following instructions are based on default values in the **.env** file.
 ```text
 PROJECT_NAME=brainstation
-LOCAL_HOST=brainstation.dev
+LOCAL_HOST=brainstation.test
 ANGULAR_PORT=4200
 KARMA_PORT=9876
+BOOTSTRAP=TRUE
+MATERIAL=FALSE
 ```
 
 Add the host name in **/etc/hosts** that is set for **LOCAL_HOST** variable in **.env** file.
 ```text
-127.0.0.1	localhost brainstation.dev
+127.0.0.1	localhost brainstation.test
 ```
+
+You can choose styleguides between [Bootstrap](http://getbootstrap.com/) and [Material](https://material.angular.io/).
 
 Clone the repository and get started.
 ```bash
