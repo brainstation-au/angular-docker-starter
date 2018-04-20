@@ -15,7 +15,7 @@ fi
 
 export $(egrep -v '^#' .env | xargs)
 
-if [ -z $PROJECT_NAME ] || [ -z $LOCAL_HOST ] || [ -z $ANGULAR_PORT ] || [ -z $KARMA_PORT ]; then
+if [ -z $PROJECT_NAME ] || [ -z $LOCAL_HOST ] || [ -z $ANGULAR_PORT ] || [ -z $KARMA_PORT ] || [ -z $COMPANY ]; then
   echo ".env file doesn't have all the required values"
   exit 1
 fi

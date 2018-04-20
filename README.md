@@ -14,6 +14,7 @@ ANGULAR_PORT=4200
 KARMA_PORT=9876
 BOOTSTRAP=TRUE
 MATERIAL=FALSE
+COMPANY=brainstation
 ```
 
 Add the host name in **/etc/hosts** that is set for **LOCAL_HOST** variable in **.env** file.

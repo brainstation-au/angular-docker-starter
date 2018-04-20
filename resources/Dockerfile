@@ -1,5 +1,5 @@
 FROM node:8
-LABEL au.com.brainstation.project="__PROJECT_NAME__"
+LABEL au.com.__COMPANY__.project="__PROJECT_NAME__"
 WORKDIR /usr/src/app
 
 ENV BIN_DIR=/usr/src/bin

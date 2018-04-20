@@ -3,7 +3,7 @@ services:
   client:
     build: .
     labels:
-      au.com.brainstation.project: "__PROJECT_NAME__"
+      au.com.__COMPANY__.project: "__PROJECT_NAME__"
     volumes:
       - ./:/usr/src/app
     ports:
