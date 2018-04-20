@@ -1,6 +1,7 @@
 #!/bin/bash
 
-yarn add web-animations-js karma-phantomjs-launcher phantomjs-prebuilt
+yarn add web-animations-js
+yarn add karma-phantomjs-launcher phantomjs-prebuilt --dev
 
 cp $STARTER_DIRECTORY/resources/polyfills.ts ./src/
 
