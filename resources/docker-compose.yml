@@ -3,7 +3,7 @@ services:
   client:
     build: .
     labels:
-      au.com.__COMPANY__.project: "__PROJECT_NAME__"
+      __DOMAIN__: "__PROJECT_NAME__"
     volumes:
       - ./:/usr/src/app
     ports:

@@ -12,8 +12,8 @@ sed -i '' "s/__ANGULAR_PORT__/${ANGULAR_PORT}/g" docker-compose.yml
 sed -i '' "s/__KARMA_PORT__/${KARMA_PORT}/g" Dockerfile
 sed -i '' "s/__KARMA_PORT__/${KARMA_PORT}/g" docker-compose.yml
 
-sed -i '' "s/__COMPANY__/${COMPANY}/g" Dockerfile
-sed -i '' "s/__COMPANY__/${COMPANY}/g" docker-compose.yml
+sed -i '' "s/__DOMAIN__/${DOMAIN}/g" Dockerfile
+sed -i '' "s/__DOMAIN__/${DOMAIN}/g" docker-compose.yml
 
 touch ./.dockerignore
 echo "*" >> ./.dockerignore
