@@ -26,7 +26,9 @@ if [ -d "../$PROJECT_NAME" ]; then
 fi
 
 npm i -g npm
-npm i -g yarn @angular/cli
+npm i -g yarn
+yarn global add @angular/cli
+ng set --global packageManager=yarn
 
 # Move to parent directory.
 STARTER_DIRECTORY=$(pwd)
