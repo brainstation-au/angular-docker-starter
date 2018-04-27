@@ -26,7 +26,7 @@ if [ -d "../$PROJECT_NAME" ]; then
 fi
 
 npm i -g npm
-npm i -g yarn @angular/cli
+npm i -g @angular/cli
 
 # Move to parent directory.
 STARTER_DIRECTORY=$(pwd)
@@ -35,9 +35,6 @@ cd ..
 # Install fresh @angular/cli project.
 ng new $PROJECT_NAME --style=scss
 cd $PROJECT_NAME
-
-# Initialize yarn
-yarn install
 
 # Styles
 mkdir ./src/styles
