@@ -27,6 +27,7 @@ fi
 
 npm i -g npm
 npm i -g @angular/cli
+ng set --global packageManager=npm
 
 # Move to parent directory.
 STARTER_DIRECTORY=$(pwd)
