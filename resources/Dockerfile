@@ -12,7 +12,7 @@ ENV SASS_BINARY_PATH=$BIN_DIR/$NODE_SASS_FILENAME
 ENV PATH=$PATH:$BIN_DIR/$PHANTOMJS_NAME/bin
 
 RUN npm i -g npm
-RUN npm i -g @angular/cli
+RUN yarn global add @angular/cli
 RUN mkdir -p ${BIN_DIR} && cd ${BIN_DIR} && \
   wget https://github.com/Medium/phantomjs/releases/download/v${PHANTOMJS_VERSION}/${PHANTOMJS_FILENAME} && \
   tar -xjf ${PHANTOMJS_FILENAME} && \
