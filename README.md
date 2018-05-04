@@ -49,3 +49,13 @@ $ docker-compose exec client npm test
 ```
 You can see Angular CLI compiles the test modules and spec files. You can connect your browser 
 at **http://localhost:9876/**. 
+
+## Plugins
+
+### Bootstrap
+If you have chosen **bootstrap**, you may want to add jQuery and popper CDN in your index.html. Please copy the
+snippet from getbootstrap.com and paste in your index.html.
+
+### Material
+If you have chosen **Material**, you may want to add hammerjs for animations. Please add `import 'hammerjs'` in
+your main.ts file.

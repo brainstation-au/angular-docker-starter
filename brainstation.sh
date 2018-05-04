@@ -25,9 +25,8 @@ if [ -d "../$PROJECT_NAME" ]; then
   exit 1
 fi
 
-npm i -g npm
 npm i -g @angular/cli
-ng set --global packageManager=npm
+ng config -g cli.packageManager npm
 
 # Move to parent directory.
 STARTER_DIRECTORY=$(pwd)
