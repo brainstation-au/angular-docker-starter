@@ -45,7 +45,7 @@ CLI compiles the project. You can now browse your fresh project at **http://brai
 
 You can run tests.
 ```bash
-$ docker-compose exec client npm test
+$ docker-compose exec client npm run test
 ```
 You can see Angular CLI compiles the test modules and spec files. You can connect your browser 
 at **http://localhost:9876/**. 
