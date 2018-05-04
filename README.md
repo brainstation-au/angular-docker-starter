@@ -40,12 +40,22 @@ $ cd ../brainstation
 $ docker-compose up -d
 $ docker-compose logs -f
 ```
-At this point you will be watching logs. You can see **yarn** installs all the project dependencies and then Angular
+At this point you will be watching logs. You can see **npm** installs all the project dependencies and then Angular
 CLI compiles the project. You can now browse your fresh project at **http://brainstation.dev:4200/**.
 
 You can run tests.
 ```bash
-$ docker-compose exec client yarn test
+$ docker-compose exec client npm test
 ```
 You can see Angular CLI compiles the test modules and spec files. You can connect your browser 
 at **http://localhost:9876/**. 
+
+## Plugins
+
+### Bootstrap
+If you have chosen **bootstrap**, you may want to add jQuery and popper CDN in your index.html. Please copy the
+snippet from getbootstrap.com and paste in your index.html.
+
+### Material
+If you have chosen **Material**, you may want to add hammerjs for animations. Please add `import 'hammerjs'` in
+your main.ts file.
