@@ -24,7 +24,11 @@ PACKAGE=$(cat $FILE | jq '.')
 
 SCRIPTS=$(jq '.scripts' <<<$PACKAGE)
 
-NEW_SCRIPTS=$(jq ". + { \"serve\": \"ng serve --host 0.0.0.0 --public-host ${LOCAL_HOST}:${ANGULAR_PORT}\" }" <<<$SCRIPTS)
+NEW_SCRIPTS=$(jq ". + {
+\"serve\": \"ng serve --host 0.0.0.0 --public-host ${LOCAL_HOST}:${ANGULAR_PORT}\",
+\"test:docker\": \"xvfb-run ng test --watch=false --browsers=ChromeHeadless\",
+\"test:ci\": \"ng test --watch=false --browsers=PhantomJS\"
+}" <<<$SCRIPTS)
 
 NEW_PACKAGE=$(jq ".scripts = ${NEW_SCRIPTS}" <<<$PACKAGE)
 

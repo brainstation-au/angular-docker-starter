@@ -41,7 +41,7 @@ $ docker-compose up -d
 $ docker-compose logs -f
 ```
 At this point you will be watching logs. You can see **npm** installs all the project dependencies and then Angular
-CLI compiles the project. You can now browse your fresh project at **http://brainstation.dev:4200/**.
+CLI compiles the project. You can now browse your fresh project at **http://brainstation.test:4200/**.
 
 You can run tests.
 ```bash
