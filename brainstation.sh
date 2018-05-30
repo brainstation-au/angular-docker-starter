@@ -50,7 +50,6 @@ echo "@import './styles/app/app';" >> ./src/styles.scss
 
 # Docker
 . $STARTER_DIRECTORY/resources/docker.sh
-. $STARTER_DIRECTORY/resources/phantomjs.sh
 
 rm -rf node_modules
 rm package-lock.json

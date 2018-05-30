@@ -1,5 +1,12 @@
 #!/bin/bash
 
+npm i web-animations-js --save
+npm i karma-phantomjs-launcher phantomjs-prebuilt --save-dev
+
+cp $STARTER_DIRECTORY/resources/polyfills.ts ./src/
+cp $STARTER_DIRECTORY/resources/karma.conf.js ./src/
+cp $STARTER_DIRECTORY/resources/protractor.conf.js ./e2e/
+
 cp $STARTER_DIRECTORY/resources/Dockerfile ./
 cp $STARTER_DIRECTORY/resources/docker-compose.yml ./
 
@@ -27,7 +34,9 @@ SCRIPTS=$(jq '.scripts' <<<$PACKAGE)
 NEW_SCRIPTS=$(jq ". + {
 \"serve\": \"ng serve --host 0.0.0.0 --public-host ${LOCAL_HOST}:${ANGULAR_PORT}\",
 \"test:docker\": \"xvfb-run ng test --watch=false --browsers=ChromeHeadless\",
-\"test:ci\": \"ng test --watch=false --browsers=PhantomJS\"
+\"test:ci\": \"ng test --watch=false --browsers=PhantomJS\",
+\"e2e:docker\": \"xvfb-run ng e2e\",
+\"e2e:ci\": \"xvfb-run ng e2e --port=8080\"
 }" <<<$SCRIPTS)
 
 NEW_PACKAGE=$(jq ".scripts = ${NEW_SCRIPTS}" <<<$PACKAGE)
