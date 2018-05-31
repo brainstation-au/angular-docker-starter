@@ -27,7 +27,7 @@ RUN cd ${BIN_DIR} && \
   wget https://github.com/sass/node-sass/releases/download/v${NODE_SASS_VERSION}/${NODE_SASS_FILENAME}
 
 # Install angular-cli.
-RUN npm i -g @angular/cli@6.0.5
+RUN npm i -g @angular/cli@6.0.7
 
 # Angular port.
 EXPOSE __ANGULAR_PORT__
