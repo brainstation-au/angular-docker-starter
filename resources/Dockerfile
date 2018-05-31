@@ -2,13 +2,13 @@ FROM node:8.11.2
 LABEL __DOMAIN__="__PROJECT_NAME__"
 WORKDIR /usr/src/app
 
-ENV BIN_DIR=/usr/src/bin
-RUN mkdir -p ${BIN_DIR}
-
 # Install Google Chrome.
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 RUN apt-get update && apt-get install -y google-chrome-stable xvfb
+
+ENV BIN_DIR=/usr/src/bin
+RUN mkdir -p ${BIN_DIR}
 
 # Install PhantomJs.
 ENV PHANTOMJS_VERSION=2.1.1

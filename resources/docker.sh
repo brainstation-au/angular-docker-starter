@@ -33,10 +33,10 @@ SCRIPTS=$(jq '.scripts' <<<$PACKAGE)
 
 NEW_SCRIPTS=$(jq ". + {
 \"serve\": \"ng serve --host 0.0.0.0 --public-host ${LOCAL_HOST}:${ANGULAR_PORT}\",
-\"test:docker\": \"xvfb-run ng test --watch=false --browsers=ChromeHeadless\",
-\"test:ci\": \"ng test --watch=false --browsers=PhantomJS\",
-\"e2e:docker\": \"xvfb-run ng e2e\",
-\"e2e:ci\": \"xvfb-run ng e2e --port=8080\"
+\"test:docker\": \"xvfb-run ng test --browsers=ChromeHeadless,PhantomJS\",
+\"test:docker:watch\": \"xvfb-run ng test --watch=true --browsers=ChromeHeadless,PhantomJS\",
+\"e2e:docker\": \"xvfb-run ng e2e --port=8080\",
+\"build:prod\": \"ng build --prod --aot\"
 }" <<<$SCRIPTS)
 
 NEW_PACKAGE=$(jq ".scripts = ${NEW_SCRIPTS}" <<<$PACKAGE)
