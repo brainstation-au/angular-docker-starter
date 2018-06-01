@@ -36,7 +36,7 @@ NEW_SCRIPTS=$(jq ". + {
 \"test:docker\": \"xvfb-run ng test --browsers=ChromeHeadless,PhantomJS\",
 \"test:docker:watch\": \"xvfb-run ng test --watch=true --browsers=ChromeHeadless,PhantomJS\",
 \"e2e:docker\": \"xvfb-run ng e2e --port=8080\",
-\"build:prod\": \"ng build --prod --aot\"
+\"build:prod\": \"ng build --prod\"
 }" <<<$SCRIPTS)
 
 NEW_PACKAGE=$(jq ".scripts = ${NEW_SCRIPTS}" <<<$PACKAGE)
