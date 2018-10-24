@@ -1,4 +1,4 @@
-FROM node:8.11.2
+FROM node:10.12.0
 LABEL __DOMAIN__="__PROJECT_NAME__"
 WORKDIR /usr/src/app
 
@@ -20,14 +20,14 @@ RUN cd ${BIN_DIR} && \
 ENV PATH=$PATH:$BIN_DIR/$PHANTOMJS_NAME/bin
 
 #Install node-sass.
-ENV NODE_SASS_VERSION=4.9.0
-ENV NODE_SASS_FILENAME=linux-x64-57_binding.node
+ENV NODE_SASS_VERSION=4.9.3
+ENV NODE_SASS_FILENAME=linux-x64-64_binding.node
 ENV SASS_BINARY_PATH=$BIN_DIR/$NODE_SASS_FILENAME
 RUN cd ${BIN_DIR} && \
   wget https://github.com/sass/node-sass/releases/download/v${NODE_SASS_VERSION}/${NODE_SASS_FILENAME}
 
 # Install angular-cli.
-RUN npm i -g @angular/cli@6.0.7
+RUN npm i -g @angular/cli@7.0.2
 
 # Angular port.
 EXPOSE __ANGULAR_PORT__

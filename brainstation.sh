@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-if [[ $(node --version) != v8* ]]; then
+if [[ $(node --version) != v10* ]]; then
   echo "Please install latest version of node 8."
   echo "\`brew install nvm\`"
   echo "\`nvm install 8\`"
