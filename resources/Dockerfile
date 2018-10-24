@@ -19,7 +19,7 @@ RUN cd ${BIN_DIR} && \
   tar -xjf ${PHANTOMJS_FILENAME}
 ENV PATH=$PATH:$BIN_DIR/$PHANTOMJS_NAME/bin
 
-#Install node-sass.v4.9.3/darwin-x64-64_binding.node
+#Install node-sass.
 ENV NODE_SASS_VERSION=4.9.3
 ENV NODE_SASS_FILENAME=linux-x64-64_binding.node
 ENV SASS_BINARY_PATH=$BIN_DIR/$NODE_SASS_FILENAME
