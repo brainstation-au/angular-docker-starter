@@ -1,11 +1,5 @@
 #!/bin/bash
 
-npm i web-animations-js --save
-
-cp $STARTER_DIRECTORY/resources/polyfills.ts ./src/
-cp $STARTER_DIRECTORY/resources/karma.conf.js ./src/
-cp $STARTER_DIRECTORY/resources/protractor.conf.js ./e2e/
-
 cp $STARTER_DIRECTORY/resources/Dockerfile ./
 cp $STARTER_DIRECTORY/resources/docker-compose.yml ./
 
@@ -31,6 +25,7 @@ PACKAGE=$(cat $FILE | jq '.')
 SCRIPTS=$(jq '.scripts' <<<$PACKAGE)
 
 NEW_SCRIPTS=$(jq ". + {
+\"test:once\": \"ng test --watch=false\",
 \"serve\": \"ng serve --host 0.0.0.0 --public-host ${LOCAL_HOST}:${ANGULAR_PORT}\",
 \"build:prod\": \"ng build --prod\"
 }" <<<$SCRIPTS)
