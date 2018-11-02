@@ -1,4 +1,4 @@
-FROM node:10.12.0
+FROM node:10.13
 LABEL __DOMAIN__="__PROJECT_NAME__"
 WORKDIR /usr/src/app
 
@@ -27,7 +27,7 @@ RUN cd ${BIN_DIR} && \
   wget https://github.com/sass/node-sass/releases/download/v${NODE_SASS_VERSION}/${NODE_SASS_FILENAME}
 
 # Install angular-cli.
-RUN npm i -g @angular/cli@7.0.2
+RUN npm i -g @angular/cli@7.0.4
 
 # Angular port.
 EXPOSE __ANGULAR_PORT__
