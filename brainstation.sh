@@ -2,9 +2,9 @@
 set -x
 
 if [[ $(node --version) != v10* ]]; then
-  echo "Please install latest version of node 10."
+  echo "Please install latest version of node 8."
   echo "\`brew install nvm\`"
-  echo "\`nvm install 10\`"
+  echo "\`nvm install 8\`"
   exit 1
 fi
 
@@ -33,7 +33,7 @@ STARTER_DIRECTORY=$(pwd)
 cd ..
 
 # Install fresh @angular/cli project.
-ng new $PROJECT_NAME --style=scss --routing=true
+ng new $PROJECT_NAME --style=scss
 cd $PROJECT_NAME
 
 # Styles
