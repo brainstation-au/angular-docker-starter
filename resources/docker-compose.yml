@@ -3,10 +3,10 @@ services:
   client:
     build: .
     labels:
-      __DOMAIN__: "__PROJECT_NAME__"
+      {{DOMAIN}}: "{{PROJECT_NAME}}"
     volumes:
       - ./:/usr/src/app
     ports:
-      - __ANGULAR_PORT__:4200
-      - __KARMA_PORT__:9876
+      - {{ANGULAR_PORT}}:4200
+      - {{KARMA_PORT}}:9876
     command: bash -c "npm install && npm run serve"
