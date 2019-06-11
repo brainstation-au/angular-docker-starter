@@ -1,5 +1,5 @@
-FROM node:10.13
-LABEL __DOMAIN__="__PROJECT_NAME__"
+FROM node:10.16
+LABEL {{DOMAIN}}="{{PROJECT_NAME}}"
 WORKDIR /usr/src/app
 
 # Install Google Chrome.
@@ -27,10 +27,10 @@ RUN cd ${BIN_DIR} && \
   wget https://github.com/sass/node-sass/releases/download/v${NODE_SASS_VERSION}/${NODE_SASS_FILENAME}
 
 # Install angular-cli.
-RUN npm i -g @angular/cli@7.0.4
+RUN npm i -g @angular/cli@8.0.2
 
 # Angular port.
-EXPOSE __ANGULAR_PORT__
+EXPOSE {{ANGULAR_PORT}}
 
 # Karma port.
-EXPOSE __KARMA_PORT__
+EXPOSE {{KARMA_PORT}}

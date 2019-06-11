@@ -1,22 +1,23 @@
 #!/bin/bash
 
-cp $STARTER_DIRECTORY/resources/karma.conf.js ./src/
+cp $STARTER_DIRECTORY/resources/karma.conf.js ./
 cp $STARTER_DIRECTORY/resources/protractor.conf.js ./e2e/
 
 cp $STARTER_DIRECTORY/resources/Dockerfile ./
 cp $STARTER_DIRECTORY/resources/docker-compose.yml ./
 
-sed -i '' "s/__PROJECT_NAME__/${PROJECT_NAME}/g" Dockerfile
-sed -i '' "s/__PROJECT_NAME__/${PROJECT_NAME}/g" docker-compose.yml
+sed -i '' "s/{{PROJECT_NAME}}/${PROJECT_NAME}/g" Dockerfile
+sed -i '' "s/{{PROJECT_NAME}}/${PROJECT_NAME}/g" docker-compose.yml
+sed -i '' "s/{{PROJECT_NAME}}/${PROJECT_NAME}/g" karma.conf.js
 
-sed -i '' "s/__ANGULAR_PORT__/${ANGULAR_PORT}/g" Dockerfile
-sed -i '' "s/__ANGULAR_PORT__/${ANGULAR_PORT}/g" docker-compose.yml
+sed -i '' "s/{{ANGULAR_PORT}}/${ANGULAR_PORT}/g" Dockerfile
+sed -i '' "s/{{ANGULAR_PORT}}/${ANGULAR_PORT}/g" docker-compose.yml
 
-sed -i '' "s/__KARMA_PORT__/${KARMA_PORT}/g" Dockerfile
-sed -i '' "s/__KARMA_PORT__/${KARMA_PORT}/g" docker-compose.yml
+sed -i '' "s/{{KARMA_PORT}}/${KARMA_PORT}/g" Dockerfile
+sed -i '' "s/{{KARMA_PORT}}/${KARMA_PORT}/g" docker-compose.yml
 
-sed -i '' "s/__DOMAIN__/${DOMAIN}/g" Dockerfile
-sed -i '' "s/__DOMAIN__/${DOMAIN}/g" docker-compose.yml
+sed -i '' "s/{{DOMAIN}}/${DOMAIN}/g" Dockerfile
+sed -i '' "s/{{DOMAIN}}/${DOMAIN}/g" docker-compose.yml
 
 touch ./.dockerignore
 echo "*" >> ./.dockerignore
@@ -37,6 +38,6 @@ NEW_SCRIPTS=$(jq ". + {
 
 NEW_PACKAGE=$(jq ".scripts = ${NEW_SCRIPTS}" <<<$PACKAGE)
 
-NEW_PACKAGE2=$(jq ". + {\"engines\":{\"node\":\"8.11.2\",\"npm\":\"5.6.0\"}}" <<<$NEW_PACKAGE)
+NEW_PACKAGE2=$(jq ". + {\"engines\":{\"node\":\"10.16\",\"npm\":\"6.9\"}}" <<<$NEW_PACKAGE)
 
 jq '.' <<<$NEW_PACKAGE2 > $FILE
